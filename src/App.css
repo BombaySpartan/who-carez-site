@@ -1,0 +1,51 @@
+/* App.css */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+.app-container {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #2d6a4f;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #40916c;
+  margin-bottom: 30px;
+}
+
+.package-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.package-item {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.package-item h3 {
+  color: #1b4332;
+  margin-bottom: 10px;
+}
+
+.package-item ul {
+  padding-left: 20px;
+  text-align: left;
+}
