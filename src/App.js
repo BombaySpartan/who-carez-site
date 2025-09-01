@@ -5,15 +5,17 @@ function App() {
   return (
     <div className="app-container">
       <header>
-        <img
-          src="/logo.png"
-          alt="Who Carez Logo"
-          className="logo"
-        />
-        <h1>Who Carez</h1>
-        <p className="tagline">
-          Care packages that come from the heart (and a Costco cart)
-        </p>
+        <section className="logo-container">
+          <img
+            src="/logo.png"
+            alt="Who Carez Logo"
+            className="logo"
+          />
+          <h1>Who Carez</h1>
+          <p className="tagline">
+            Care packages that come from the heart (and a Costco cart)
+          </p>
+        </section>
       </header>
 
       <main>
