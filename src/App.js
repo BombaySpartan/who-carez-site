@@ -1,29 +1,43 @@
-import React, { useState } from 'react';
-import { FaSun, FaMoon } from 'react-icons/fa';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
 
-  const toggleDarkMode = () => setDarkMode(!darkMode);
-
   return (
-    <div className={`app-container ${darkMode ? 'dark' : ''}`}>
-      <div className="background-image" />
+    <div className={`app-container ${darkMode ? "dark" : ""}`}>
+      {/* Background Image */}
+      <div
+        className="background-image"
+        style={{
+          backgroundImage: "url('/background-firewatch.png')"
+        }}
+      ></div>
 
-      <header>
-        <img src="/logo.png" alt="Who Carez Logo" className="logo" />
-        <h1>Who Carez</h1>
-        <p className="tagline">
-          Care packages that come from the heart (and a Costco cart)
-        </p>
-        <button className="dark-mode-toggle" onClick={toggleDarkMode}>
+      {/* Dark Mode Toggle */}
+      <div className="toggle-container">
+        <button onClick={() => setDarkMode(!darkMode)} className="toggle-button">
           {darkMode ? <FaSun /> : <FaMoon />}
         </button>
+      </div>
+
+      <header>
+        <section className="header-section">
+          <img
+            src="/logo.png"
+            alt="Who Carez Logo"
+            className="logo"
+          />
+          <h1>Who Carez</h1>
+          <p className="tagline">
+            Care packages that come from the heart (and a Costco cart)
+          </p>
+        </section>
       </header>
 
       <main>
-        <section id="what-we-do" className="content-box">
+        <section className="mission" id="what-we-do">
           <h2>What We Do</h2>
           <p>
             We make simple, thoughtful care packages — socks, soap, protein bars, and a can of Spam —
@@ -31,7 +45,7 @@ function App() {
           </p>
         </section>
 
-        <section id="how-it-works" className="content-box">
+        <section className="how-it-works" id="how-it-works">
           <h2>How It Works</h2>
           <ol>
             <li>We bulk-buy essentials from Costco</li>
@@ -41,7 +55,7 @@ function App() {
           </ol>
         </section>
 
-        <section id="join-us" className="content-box">
+        <section className="call-to-action" id="get-involved">
           <h2>Want to Join In?</h2>
           <p>
             Start your own little stockpile. Help a neighbor. Donate goods. Or just spread the word.
