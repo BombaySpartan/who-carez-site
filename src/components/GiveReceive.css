@@ -1,0 +1,26 @@
+.give-receive-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 2rem;
+  background: var(--card-bg);
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  margin: 3rem 0;
+  overflow: hidden;
+}
+
+.give-receive-container .hand,
+.give-receive-container .package {
+  flex: 1;
+  text-align: center;
+}
+
+.give-receive-container img {
+  width: 100%;
+  max-width: 200px;
+}
+
+.give-receive-container .package {
+  z-index: 10;
+}
