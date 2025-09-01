@@ -145,7 +145,26 @@ footer {
   display: flex;
   justify-content: center;
 }
+.illustrations {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
 
+.illustrations img {
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.illustrations img:hover {
+  transform: scale(1.05);
+}
 .care-scene-image {
   max-width: 100%;
   height: auto;

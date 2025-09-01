@@ -45,7 +45,11 @@ function App() {
     className="care-scene-image"
   />
 </section>
-
+<div className="illustrations">
+  <img src="/hand-giving.png" alt="Giving hand" />
+  <img src="/hand-receiving.png" alt="Receiving hand" />
+  <img src="/care-package.png" alt="Care package" />
+</div>
         <section id="how-it-works" className="section">
           <h2>How It Works</h2>
           <ol>
