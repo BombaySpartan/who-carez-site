@@ -1,3 +1,4 @@
+/* General container styles */
 .app-container {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(to bottom right, #f4f6f8, #ffffff);
@@ -7,19 +8,24 @@
   margin: auto;
 }
 
-.logo-container {
-  text-align: center;
-  margin-bottom: 2rem;
+/* Logo image */
+.logo {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto 2rem;
 }
 
-.logo {
-  width: 180px;
-  margin-bottom: 1rem;
+/* Header styles */
+header {
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
 h1 {
   font-size: 3rem;
-  color: #4c1d95; /* Purple */
+  color: #4c1d95; /* purple */
   margin-bottom: 0.5rem;
 }
 
@@ -28,6 +34,7 @@ h1 {
   color: #6b7280;
 }
 
+/* Section box styles */
 main section {
   margin-bottom: 2.5rem;
   padding: 1.5rem;
@@ -36,15 +43,18 @@ main section {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
 }
 
+/* Section headings */
 main h2 {
-  color: #1e3a8a; /* Dark Blue */
+  color: #1e3a8a; /* dark blue */
   margin-bottom: 0.5rem;
 }
 
+/* Ordered list */
 ol {
   padding-left: 1.5rem;
 }
 
+/* Footer styles */
 footer {
   text-align: center;
   font-size: 0.85rem;
