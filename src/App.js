@@ -1,71 +1,79 @@
 import React, { useState } from "react";
-import "./App.css";
+import { motion } from "framer-motion";
 import { FaMoon, FaSun } from "react-icons/fa";
+import "./App.css";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
 
-  return (
-    <div className={`app-container ${darkMode ? "dark" : ""}`}>
-      {/* Background Image */}
-      <div
-        className="background-image"
-        style={{
-          backgroundImage: "url('/background-firewatch.png')"
-        }}
-      ></div>
+  const toggleDarkMode = () => setDarkMode(!darkMode);
 
-      {/* Dark Mode Toggle */}
+  return (
+    <div className={darkMode ? "app-container dark" : "app-container"}>
+      {/* Toggle */}
       <div className="toggle-container">
-        <button onClick={() => setDarkMode(!darkMode)} className="toggle-button">
+        <button onClick={toggleDarkMode} className="dark-mode-toggle">
           {darkMode ? <FaSun /> : <FaMoon />}
         </button>
       </div>
 
-      <header>
-        <section className="header-section">
-          <img
-            src="/logo.png"
-            alt="Who Carez Logo"
-            className="logo"
-          />
-          <h1>Who Carez</h1>
-          <p className="tagline">
-            Care packages that come from the heart (and a Costco cart)
-          </p>
-        </section>
-      </header>
+      {/* Header */}
+      <motion.header
+        className="hero"
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <img src="/logo.png" alt="WhoCarez Logo" className="logo" />
+        <h1>WhoCarez</h1>
+        <p className="tagline">Delivering care, one package at a time</p>
+      </motion.header>
 
+      {/* Animated Hero Background */}
+      <motion.section
+        className="hero-scene"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2 }}
+      >
+        <img src="/background-firewatch.png" alt="Firewatch-style bg" className="background-image" />
+        <img src="/hand-giving.png" alt="Giving Hand" className="hand hand-giving" />
+        <img src="/care-package.png" alt="Care Package" className="package" />
+        <img src="/hand-receiving.png" alt="Receiving Hand" className="hand hand-receiving" />
+      </motion.section>
+
+      {/* Main Sections */}
       <main>
-        <section className="mission" id="what-we-do">
+        <motion.section
+          id="about"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+        >
           <h2>What We Do</h2>
           <p>
-            We make simple, thoughtful care packages — socks, soap, protein bars, and a can of Spam —
-            all zipped up and ready to hand out to folks in need. It’s a small gesture that says, “Hey, someone cares.”
+            We deliver essential care packages to those in need. Hygiene, food,
+            and love — wrapped in compassion.
           </p>
-        </section>
+        </motion.section>
 
-        <section className="how-it-works" id="how-it-works">
+        <motion.section
+          id="how"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+        >
           <h2>How It Works</h2>
           <ol>
-            <li>We bulk-buy essentials from Costco</li>
-            <li>Assemble $10 care packs</li>
-            <li>Keep them in our cars</li>
-            <li>Hand them out to anyone who could use a little help</li>
+            <li>You donate 💖</li>
+            <li>We assemble & ship 📦</li>
+            <li>Someone gets the care they deserve 🙌</li>
           </ol>
-        </section>
-
-        <section className="call-to-action" id="get-involved">
-          <h2>Want to Join In?</h2>
-          <p>
-            Start your own little stockpile. Help a neighbor. Donate goods. Or just spread the word.
-            We’re not a big org (yet), but we’ve got big hearts.
-          </p>
-        </section>
+        </motion.section>
       </main>
 
       <footer>
-        <p>© {new Date().getFullYear()} Who Carez. Built with ❤️ and Spam.</p>
+        Made with 💜 by the WhoCarez team.
       </footer>
     </div>
   );
