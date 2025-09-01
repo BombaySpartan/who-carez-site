@@ -1,47 +1,45 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import './index.css';
+import { FaSun, FaMoon } from 'react-icons/fa';
+
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    if (darkMode) {
-      document.body.classList.add('dark-mode');
-    } else {
-      document.body.classList.remove('dark-mode');
-    }
+    document.body.className = darkMode ? 'dark' : '';
   }, [darkMode]);
 
+  const scrollToSection = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <div className="app-container">
-      <header>
-        <div className="dark-toggle">
-          <label className="toggle-label">
-            <input
-              type="checkbox"
-              checked={darkMode}
-              onChange={() => setDarkMode(!darkMode)}
-            />
-            <span className="slider" />
-            <span className="label-text">Dark Mode</span>
-          </label>
+    <div className={`app-container ${darkMode ? 'dark' : ''}`}>
+      <nav className="navbar">
+        <div className="nav-left">
+          <img src="/logo.png" alt="Who Carez Logo" className="nav-logo" />
+          <span className="nav-title">Who Carez</span>
         </div>
-        <section className="max-w-4xl mx-auto text-center">
-          <img
-            src="/logo.png"
-            alt="Who Carez Logo"
-            className="mx-auto mb-8 w-64"
-          />
-          <h1>Who Carez</h1>
-          <p className="tagline">
-            Care packages that come from the heart (and a Costco cart)
-          </p>
-        </section>
+
+        <div className="nav-links">
+          <button onClick={() => scrollToSection('what')}>What</button>
+          <button onClick={() => scrollToSection('how')}>How</button>
+          <button onClick={() => scrollToSection('join')}>Join</button>
+        </div>
+
+        <div className="icon-toggle" onClick={() => setDarkMode(!darkMode)} title="Toggle dark mode">
+          {darkMode ? <FaSun className="icon sun" /> : <FaMoon className="icon moon" />}
+        </div>
+      </nav>
+
+      <header className="header">
+        <h1>Who Carez</h1>
+        <p className="tagline">Care packs from the heart (and a Costco cart)</p>
       </header>
 
       <main>
-        <section className="mission">
+        <section id="what" className="section">
           <h2>What We Do</h2>
           <p>
             We make simple, thoughtful care packages — socks, soap, protein bars, and a can of Spam —
@@ -49,7 +47,7 @@ function App() {
           </p>
         </section>
 
-        <section className="how-it-works">
+        <section id="how" className="section">
           <h2>How It Works</h2>
           <ol>
             <li>We bulk-buy essentials from Costco</li>
@@ -59,7 +57,7 @@ function App() {
           </ol>
         </section>
 
-        <section className="call-to-action">
+        <section id="join" className="section">
           <h2>Want to Join In?</h2>
           <p>
             Start your own little stockpile. Help a neighbor. Donate goods. Or just spread the word.
