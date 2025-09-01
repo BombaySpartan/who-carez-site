@@ -6,7 +6,7 @@ function App() {
     <div className="app-container">
       <header>
         <img
-          src="https://www.whocarez.org/logo.png"
+          src="/logo.png"
           alt="Who Carez Logo"
           className="logo"
         />
