@@ -1,41 +1,51 @@
-/* Reset & container */
+/* App.css */
+
+:root {
+  --bg-color: #f0f0f0;
+  --text-color: #1a1a1a;
+  --section-bg: #ffffff;
+}
+
 body {
   margin: 0;
-  padding: 0;
-  transition: background-color 0.5s ease, color 0.5s ease;
-}
-
-.app-container {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to bottom right, #f4f6f8, #ffffff);
-  color: #333;
-  padding: 2rem;
-  max-width: 960px;
-  margin: auto;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.app-container.dark {
-  background: linear-gradient(to bottom right, #111827, #1f2937);
-  color: #f9fafb;
+.app.dark-mode {
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
+  --section-bg: #1e1e1e;
 }
 
-/* Toggle */
-.toggle-container {
-  text-align: right;
-}
-
-.dark-mode-toggle {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  color: inherit;
-  cursor: pointer;
+.app {
+  text-align: center;
+  min-height: 100vh;
+  background-image: url("/background-firewatch.png");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-bottom: 2rem;
 }
 
 /* Header */
-header {
-  text-align: center;
-  margin-bottom: 3rem;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.app.dark-mode .header {
+  background-color: rgba(18, 18, 18, 0.8);
 }
 
 .logo {
@@ -43,99 +53,101 @@ header {
   height: auto;
 }
 
-h1 {
+.dark-mode-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+/* Hero Section */
+.hero {
+  padding: 4rem 1rem 2rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+  max-width: 800px;
+  margin: auto;
+  border-radius: 1rem;
+}
+
+.app.dark-mode .hero {
+  background-color: rgba(30, 30, 30, 0.85);
+}
+
+.hero h1 {
   font-size: 3rem;
-  color: #4c1d95;
-  margin: 0.5rem 0;
+  margin-bottom: 0.5rem;
 }
 
-.app-container.dark h1 {
-  color: #a78bfa;
-}
-
-.tagline {
+.hero p {
   font-size: 1.2rem;
-  color: #6b7280;
+  color: var(--text-color);
 }
 
-.app-container.dark .tagline {
-  color: #d1d5db;
+/* Images Section */
+.images {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  max-width: 1000px;
 }
 
-/* Hero scene */
-.hero-scene {
-  position: relative;
-  height: 300px;
-  margin-bottom: 3rem;
-  overflow: hidden;
+.images img {
+  max-width: 150px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.images img:hover {
+  transform: scale(1.1);
+}
+
+/* Join Section */
+.join-section {
+  text-align: center;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: var(--section-bg);
   border-radius: 1rem;
+  max-width: 600px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.background-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.7);
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
+.join-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-.hand,
-.package {
-  position: absolute;
-  z-index: 2;
+.join-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
-.hand-giving {
-  top: 50px;
-  left: 10%;
-  width: 120px;
-}
-
-.package {
-  top: 120px;
-  left: 45%;
-  width: 100px;
-}
-
-.hand-receiving {
-  bottom: 30px;
-  right: 10%;
-  width: 120px;
-}
-
-/* Main sections */
-main section {
-  margin-bottom: 2.5rem;
-  padding: 1.5rem;
-  background: #fff;
+.cta-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #4c1d95;
+  color: white;
+  border: none;
   border-radius: 1rem;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-  transition: background 0.5s ease;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.app-container.dark main section {
-  background: #374151;
-}
-
-main h2 {
-  color: #1e3a8a;
-}
-
-.app-container.dark main h2 {
-  color: #93c5fd;
-}
-
-ol {
-  padding-left: 1.5rem;
+.cta-button:hover {
+  background-color: #6d28d9;
 }
 
 /* Footer */
-footer {
+.footer {
   text-align: center;
-  font-size: 0.85rem;
-  margin-top: 4rem;
-  color: #9ca3af;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  margin-top: 2rem;
 }
