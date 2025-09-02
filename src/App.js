@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import './App.css';
 import { FaMoon, FaSun } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import firewatchBg from './assets/background-firewatch.png';
+
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -11,6 +13,10 @@ function App() {
   const toggleDarkMode = () => setDarkMode(!darkMode);
 
   return (
+  <div
+  className={`app ${darkMode ? 'dark-mode' : ''}`}
+  style={{ backgroundImage: `url(${firewatchBg})` }}
+>
     <div className={`app ${darkMode ? 'dark-mode' : ''}`}>
       {/* Header */}
       <header className="header">
