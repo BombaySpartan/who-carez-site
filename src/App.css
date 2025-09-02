@@ -23,7 +23,7 @@ body {
 .app {
   text-align: center;
   min-height: 100vh;
-  background-image: url("/background-firewatch.png");
+  background-image: url("background-firewatch.png"); /* ✅ FIXED */
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
